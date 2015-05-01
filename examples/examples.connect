@@ -1,0 +1,8 @@
+
+import from consul_value_store do
+  value1 = value
+end
+
+import from consul_service_store do
+  value1 = value
+end

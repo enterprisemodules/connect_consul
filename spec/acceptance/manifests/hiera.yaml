@@ -1,0 +1,10 @@
+---
+:backends:
+   - connect
+:hierarchy:
+  - defaults
+  - %{clientcert}
+  - %{environment}
+  - global
+:connect:
+  :datadir: /etc/puppet/connect
