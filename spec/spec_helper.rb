@@ -12,7 +12,14 @@ if RUBY_VERSION[0,3] != '1.8'
   require "codeclimate-test-reporter"
   CodeClimate::TestReporter.start
   require 'bogus/rspec'
+  require 'simplecov'
   require 'coveralls'
+  SimpleCov.start do
+    add_filter 'lib/method_hash'
+    add_filter 'lib/hash_extensions'
+    add_filter 'spec/**/*'
+    add_filter 'connect/datasources/base.rb'
+  end
   Coveralls.wear!
 else
   #
