@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/hajee/connect_consul.png?branch=master)](https://travis-ci.org/hajee/connect_consul) [![Coverage Status](https://coveralls.io/repos/hajee/connect_consul/badge.svg)](https://coveralls.io/r/hajee/connect_consul)[![Code Climate](https://codeclimate.com/github/hajee/connect_consul/badges/gpa.svg)](https://codeclimate.com/github/hajee/connect_consul)
 
-####Table of Contents
+#### Table of Contents
 
 1. [Overview](#overview)
 2. [Module Description - What Consul importer for Connect does and why it is useful](#module-description)
@@ -16,17 +16,17 @@
     * [OS support](#os-support)
     * [Tests - Testing your configuration](#testing)
 
-##Overview
+## Overview
 
 [Connect](https://github.com/hajee/connect) is a replacement for YAML in hiera when using Puppet. Connect allows you to manipulate and import data from external sources. These importers are add-on extensions for Connect.
 
 This module contains an importer to import values and services from [Consul](https://www.consul.io/)
 
-##Module Description
+## Module Description
 
 Using this module, you can import service data and data from the Consul key value store seamlessly in your Puppet manifests. This allows you to build dynamic manifests. For example if you store all information regarding font-end load balancers in Consul, you can use this Connect data source to fetch the current data from Consul and configure your applications accordingly. Changes in health of your load balancers are noticed by Consul. If Consul decides a service is not healthy anymore, it removes the server from the list of services. On every new Puppet run, Consul is queried, and the last changes in health are propagated to your Puppet manifest and resulting configuration.
 
-##Example
+## Example
 
 With this import, you can use service information stored in Consul, to configure your system. Here's an example:
 
@@ -60,9 +60,9 @@ end
 This fetches the value with key `foo` from Consul and stores it into the connect variable `foo`
 
 
-##Setup
+## Setup
 
-###Installing the module
+### Installing the module
 
 To use the connect hiera module, you first have to make sure it is installed.
 
@@ -76,10 +76,9 @@ If you are using a Puppetfile, you need the following lines:
 mod 'hajee-connect_consul'
 ```
 
-###What connect_consul affects
+### What connect_consul affects
 
-
-###Setup Requirements
+### Setup Requirements
 
 To use this module, you need to have the ruby gem `diplomat` installed:
 
@@ -87,16 +86,16 @@ To use this module, you need to have the ruby gem `diplomat` installed:
 $ gem install diplomat
 ```
 
-The `diplomat`  gem requires Ruby 1.9 or higher. 
+The `diplomat`  gem requires Ruby 1.9 or higher.
 
-###Beginning with connect Consul module
+### Beginning with connect Consul module
 
 
-##detailed description
+## Detailed description
 
 Check [the Connect Language, in a Nutshell](https://github.com/hajee/connect/blob/master/doc/nutshell.md), for more intro into the language.
 
-##Troubleshooting
+## Troubleshooting
 
 Your Consul server needs to run properly. Check the function of Consul by querying it directly. For a service use:
 
@@ -111,23 +110,22 @@ http://localhost:8500/v1/kv/?recurse
 $  curl http://<consul_server>:8500/v1/kv/<key>
 ```
 
+## Limitations
 
-##Limitations
+This module is tested CentOS and Redhat. It will probably work on other Linux distributions.
 
-This module is tested CentOS and Redhat. It will probably work on other Linux distributions. 
-
-##Development
+## Development
 
 This is an open source project, and contributions are welcome.
 
-###OS support
+### OS support
 
 Currently we have tested:
 
 * CentOS 5
 * Redhat 5
 
-###Testing
+### Testing
 
 Make sure you have:
 
