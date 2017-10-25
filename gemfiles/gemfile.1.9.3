@@ -1,16 +1,24 @@
 source 'https://rubygems.org'
 
-group :development, :test do
-  gem "codeclimate-test-reporter",  require: nil
-  gem 'rake'
-  gem 'rspec' 
-  gem 'rspec-its'
-  gem 'rspec-collection_matchers'
-  gem 'bogus'
-  gem 'coveralls', :require => false
-  gem "puppetlabs_spec_helper"
-end
-
+gem 'rake', '~> 10.0.0', :require => false
+gem 'rspec-core', '3.1.7'
+gem 'rspec-its'
+gem 'rspec-collection_matchers'
+gem 'bogus'
+gem 'puppet-lint'
+gem "rspec-puppet"
+gem 'puppetlabs_spec_helper'
+gem 'puppet-blacksmith'
+gem 'puppet-syntax'
+gem 'jwt', '1.5.4'       # This is the last versions to support ruby pre 2.0 versions
+gem 'json_pure', '2.0.1' # This is the last versions to support ruby pre 2.0 versions
+gem 'gettext-setup'
+gem 'ci_reporter_rspec'
+gem 'easy_type_helpers', :git => 'https://github.com/enterprisemodules/easy_type_helpers.git'
+gem 'mime-types', '2.99.2'
+gem 'rest-client', '1.8.0'
+gem 'gettext-setup'
+gem 'parallel_tests', '2.6.0'
 
 gem 'hiera'
 gem 'diplomat'
